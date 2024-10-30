@@ -1,0 +1,137 @@
+Enregistrament vol: AF662
+ OK
+
+Enregistrament vol: AF662
+ Error: AF662 vol ja existent a Voling, no s'ha afegit el vol
+
+Enregistrament vol: AF663
+ OK
+
+"mostrarVol"
+ Error: Opció no vàlida
+
+Vols de Voling (per ordre d'enregistrament):
+ 1.
+ Número vol: AF662
+ Ciutat origen: París
+ Ciutat destinació: Dubai
+ Hora sortida: 10:15
+ Hora arribada: 20:04
+ Estat vol: Arrived
+ Seients disponibles: 120
+ 2.
+ Número vol: AF663
+ Ciutat origen: Dubai
+ Ciutat destinació: París
+ Hora sortida: 8:10
+ Hora arribada: 12:40
+ Estat vol: Delayed
+ Seients disponibles: 2
+
+Enregistrament reserva: B003
+ OK
+
+Enregistrament reserva: B003
+ Error: B003 reserva ja existent a Voling, no s'ha afegit la reserva
+
+Enregistrament reserva: B001
+ OK
+
+Enregistrament reserva: A002
+ Error: vol AF663 no disposa de seients disponibles, no s'ha afegit la reserva
+
+Enregistrament reserva: A002
+ OK
+
+Enregistrament reserva: B002
+ Error: vol AF663 no disposa de seients disponibles, no s'ha afegit la reserva
+
+Enregistrament reserva: A001
+ OK
+
+"mostrarReserva"
+ Error: Opció no vàlida
+
+Reserves de Voling (per número de reserva):
+ 1.
+ Número reserva: A001
+ Nom passatger: Chris-Martin
+ Número vol: AF662
+ Pagament: Credit-Card
+ 2.
+ Número reserva: A002
+ Nom passatger: Jane-Devon
+ Número vol: AF662
+ Pagament: Debit-Card
+ 3.
+ Número reserva: B001
+ Nom passatger: John-Doe
+ Número vol: AF663
+ Pagament: Credit-Card
+ 4.
+ Número reserva: B003
+ Nom passatger: Alex-Newell
+ Número vol: AF663
+ Pagament: PayPal
+
+Vols de Voling (per ordre d'enregistrament):
+ 1.
+ Número vol: AF662
+ Ciutat origen: París
+ Ciutat destinació: Dubai
+ Hora sortida: 10:15
+ Hora arribada: 20:04
+ Estat vol: Arrived
+ Seients disponibles: 118
+ 2.
+ Número vol: AF663
+ Ciutat origen: Dubai
+ Ciutat destinació: París
+ Hora sortida: 8:10
+ Hora arribada: 12:40
+ Estat vol: Delayed
+ Seients disponibles: 0
+
+Passatgers del vol AI101 de Voling (en ordre alfabètic):
+ Error: AI101 vol no existent a Voling
+
+Passatgers del vol AF662 de Voling (en ordre alfabètic):
+ 1.
+ Nom passatger: Chris-Martin
+ Estat reserva: Pending
+ Número seient: C3
+ 2.
+ Nom passatger: Jane-Devon
+ Estat reserva: Pending
+ Número seient: D22
+
+Reserves de Voling amb estat "Confirmed" (per número de reserva):
+ 1.
+ Número reserva: B001
+ Nom passatger: John-Doe
+ Número vol: AF663
+ Pagament: Credit-Card
+ 2.
+ Número reserva: B003
+ Nom passatger: Alex-Newell
+ Número vol: AF663
+ Pagament: PayPal
+
+Reserves de Voling amb estat "Pending" (per número de reserva):
+ 1.
+ Número reserva: A001
+ Nom passatger: Chris-Martin
+ Número vol: AF662
+ Pagament: Credit-Card
+ 2.
+ Número reserva: A002
+ Nom passatger: Jane-Devon
+ Número vol: AF662
+ Pagament: Debit-Card
+
+Passatgers del vol AF664 de Voling (en ordre alfabètic):
+ Error: AF664 vol no existent a Voling
+
+"acaba"
+ Error: Opció no vàlida
+

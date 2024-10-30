@@ -1,0 +1,139 @@
+Jugador Alex creat correctament 
+Jugador Jordi creat correctament 
+Jugador Marta creat correctament 
+Jugador Pere creat correctament 
+Jugador Esteve creat correctament 
+Item Daga creat correctament 
+Item Casc creat correctament 
+Item Capa creat correctament 
+Item Creu_gamada creat correctament 
+Item Escut creat correctament 
+Item Creu_daurada creat correctament 
+Item Espasa creat correctament 
+Personatge Momo creat correctament per al jugador Alex
+Personatge Lilith creat correctament per al jugador Alex
+Personatge Justine creat correctament per al jugador Alex
+Personatge Guerin creat correctament per al jugador Marta
+Personatge Sam creat correctament per al jugador Jordi
+Personatge Frodo creat correctament per al jugador Jordi
+Personatge Larskal creat correctament per al jugador Alex
+ERROR: El jugador Marta ja té el personatge Guerin. No es pot afegir a Alex
+Personatge Liliana creat correctament per al jugador Alex
+ERROR: El jugador Alex ja té 5 personatges. No es pot afegir el personatge Hiliasa
+Personatge Liliana equipat amb Casc
+Personatge Liliana equipat amb Daga
+Personatge Liliana equipat amb Capa
+ERROR: El personatge Liliana ja està equipat amb Casc
+Personatge Guerin equipat amb Casc
+ERROR: L'item Collaret no existeix. No es pot assignar a Guerin
+--------------------
+Tots els jugadors
+Nom: Alex
+Login: Alex71
+Password: 4LeX71
+
+Nom: Jordi
+Login: Jordi80
+Password: 70Rdi80
+
+Nom: Marta
+Login: Marta25
+Password: M4RT4
+
+Nom: Pere
+Login: Pere23
+Password: P3R3_56
+
+Nom: Esteve
+Login: Jordi00
+Password: 70Rdi800
+
+--------------------
+Tots els Items d'equipament
+Nom: Daga
+Tipus: Arma
+Pes: 0.3
+
+Nom: Casc
+Tipus: Armadura
+Pes: 2
+
+Nom: Capa
+Tipus: Roba
+Pes: 0.5
+
+Nom: Creu_gamada
+Tipus: Talisma
+Pes: 0.1
+
+Nom: Escut
+Tipus: Armadura
+Pes: 5
+
+Nom: Creu_daurada
+Tipus: Talisma
+Pes: 0.1
+
+Nom: Espasa
+Tipus: Arma
+Pes: 15
+
+--------------------
+Tots els personatges de 
+Nom: Alex
+Login: Alex71
+Password: 4LeX71
+
+Nom: Momo
+Tipus: Guerrer
+Genere: Masculi
+Pes Maxim: 30
+----------
+Nom: Lilith
+Tipus: Paladi
+Genere: Femeni
+Pes Maxim: 45
+----------
+Nom: Justine
+Tipus: Sacerdot
+Genere: Masculi
+Pes Maxim: 50
+----------
+Nom: Larskal
+Tipus: Mag
+Genere: Masculi
+Pes Maxim: 35
+----------
+Nom: Liliana
+Tipus: Paladi
+Genere: Femeni
+Pes Maxim: 40
+----------
+--------------------
+Tots els personatges de 
+Nom: Jordi
+Login: Jordi80
+Password: 70Rdi80
+
+Nom: Sam
+Tipus: Guerrer
+Genere: Masculi
+Pes Maxim: 60
+----------
+Nom: Frodo
+Tipus: Guerrer
+Genere: Masculi
+Pes Maxim: 45
+----------
+--------------------
+Tots els personatges de 
+Nom: Marta
+Login: Marta25
+Password: M4RT4
+
+Nom: Guerin
+Tipus: Guerrer
+Genere: Femeni
+Pes Maxim: 40
+----------
+ERROR: El jugador Marc no existeix 
