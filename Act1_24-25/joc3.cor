@@ -1,0 +1,206 @@
+Jugador Alex creat correctament 
+Jugador Jordi creat correctament 
+Jugador Marta creat correctament 
+Jugador Pere creat correctament 
+Jugador Esteve creat correctament 
+Item Daga creat correctament 
+Item Casc creat correctament 
+Item Capa creat correctament 
+Item Creu_gamada creat correctament 
+Item Escut creat correctament 
+Item Creu_daurada creat correctament 
+Item Espasa creat correctament 
+Personatge Momo creat correctament per al jugador Alex
+Personatge Lilith creat correctament per al jugador Alex
+Personatge Justine creat correctament per al jugador Alex
+Personatge Guerin creat correctament per al jugador Marta
+Personatge Sam creat correctament per al jugador Jordi
+Personatge Frodo creat correctament per al jugador Jordi
+Personatge Liliana creat correctament per al jugador Alex
+Personatge Hiliasa creat correctament per al jugador Pere
+Personatge Liliana equipat amb Casc
+Personatge Liliana equipat amb Daga
+Personatge Liliana equipat amb Capa
+Personatge Liliana equipat amb Espasa
+ERROR: L'item Escut sobrepassa el pes màxim per al personatge Liliana
+Personatge Guerin equipat amb Casc
+Personatge Guerin equipat amb Creu_daurada
+Personatge Guerin equipat amb Espasa
+Personatge Guerin equipat amb Capa
+Personatge Guerin equipat amb Daga
+Personatge Guerin equipat amb Escut
+ERROR: El personatge Guerin ja està equipat amb 6 ítems
+--------------------
+Tots els jugadors
+Nom: Alex
+Login: Alex71
+Password: 4LeX71
+
+Nom: Jordi
+Login: Jordi80
+Password: 70Rdi80
+
+Nom: Marta
+Login: Marta25
+Password: M4RT4
+
+Nom: Pere
+Login: Pere23
+Password: P3R3_56
+
+Nom: Esteve
+Login: Jordi00
+Password: 70Rdi800
+
+--------------------
+Tots els Items d'equipament
+Nom: Daga
+Tipus: Arma
+Pes: 0.3
+
+Nom: Casc
+Tipus: Armadura
+Pes: 2
+
+Nom: Capa
+Tipus: Roba
+Pes: 0.5
+
+Nom: Creu_gamada
+Tipus: Talisma
+Pes: 0.1
+
+Nom: Escut
+Tipus: Armadura
+Pes: 5
+
+Nom: Creu_daurada
+Tipus: Talisma
+Pes: 0.1
+
+Nom: Espasa
+Tipus: Arma
+Pes: 15
+
+--------------------
+Tots els personatges de 
+Nom: Alex
+Login: Alex71
+Password: 4LeX71
+
+Nom: Momo
+Tipus: Guerrer
+Genere: Masculi
+Pes Maxim: 30
+----------
+Nom: Lilith
+Tipus: Paladi
+Genere: Femeni
+Pes Maxim: 45
+----------
+Nom: Justine
+Tipus: Sacerdot
+Genere: Masculi
+Pes Maxim: 50
+----------
+Nom: Liliana
+Tipus: Paladi
+Genere: Femeni
+Pes Maxim: 20
+----------
+--------------------
+Tots els personatges de 
+Nom: Jordi
+Login: Jordi80
+Password: 70Rdi80
+
+Nom: Sam
+Tipus: Guerrer
+Genere: Masculi
+Pes Maxim: 60
+----------
+Nom: Frodo
+Tipus: Guerrer
+Genere: Masculi
+Pes Maxim: 45
+----------
+--------------------
+Tots els personatges de 
+Nom: Marta
+Login: Marta25
+Password: M4RT4
+
+Nom: Guerin
+Tipus: Guerrer
+Genere: Femeni
+Pes Maxim: 40
+----------
+ERROR: El personatge Gertrud no existeix 
+--------------------
+--------------------
+Equipament de 
+Nom: Guerin
+Tipus: Guerrer
+Genere: Femeni
+Pes Maxim: 40
+
+Nom: Casc
+Tipus: Armadura
+Pes: 2
+----------
+Nom: Creu_daurada
+Tipus: Talisma
+Pes: 0.1
+----------
+Nom: Espasa
+Tipus: Arma
+Pes: 15
+----------
+Nom: Capa
+Tipus: Roba
+Pes: 0.5
+----------
+Nom: Daga
+Tipus: Arma
+Pes: 0.3
+----------
+Nom: Escut
+Tipus: Armadura
+Pes: 5
+----------
+Pes total per Guerin: 22.9
+----------
+--------------------
+Equipament de 
+Nom: Liliana
+Tipus: Paladi
+Genere: Femeni
+Pes Maxim: 20
+
+Nom: Casc
+Tipus: Armadura
+Pes: 2
+----------
+Nom: Daga
+Tipus: Arma
+Pes: 0.3
+----------
+Nom: Capa
+Tipus: Roba
+Pes: 0.5
+----------
+Nom: Espasa
+Tipus: Arma
+Pes: 15
+----------
+Pes total per Liliana: 17.8
+----------
+--------------------
+Equipament de 
+Nom: Frodo
+Tipus: Guerrer
+Genere: Masculi
+Pes Maxim: 45
+
+Frodo no té equipament
+----------

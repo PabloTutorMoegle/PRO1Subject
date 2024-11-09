@@ -1,0 +1,42 @@
+10 50
+mostrarVols
+mostrarReserves
+enregistrarVol
+AI101 Delhi London 7:15 11:30 On-time 200
+enregistrarVol
+AF662 París Dubai 10:15 20:04 Arrived 120
+enregistrarVol
+AI102 London Delhi 8:45 22:30 Scheduled 2
+enregistrarVol
+AI102 London Delhi 8:45 22:30 Scheduled 200
+enregistrarVol
+AF663 Dubai París 8:10 12:40 Delayed 50
+mostrarVols
+enregistrarReserva
+B002 Alice-Brown Confirmed A2 AI102 Credit-Card
+enregistrarReserva
+B001 John-Doe Confirmed A1 AI102 Credit-Card
+enregistrarReserva
+B003 Alex-Newell Pending A2 AI102 PayPal
+enregistrarReserva
+A002 Jane-Devon Pending D22 AF663 Debit-Card
+enregistrarReserva
+A002 Chris-Martin Pending C3 AF662 Credit-Card
+enregistrarReserva
+A001 Chris-Martin Pending C3 AF662 Credit-Card
+mostrarReserves
+mostrarVols
+mostrarPassatgers
+mostrarPassatgersVol
+AI101
+mostrarPassatgersVol
+AF662
+mostrarReservesEstat
+Confirmed
+mostrarReservesEstat
+Pending
+mostrarPassatgersVol
+AF664
+mostrarPassatgersVol
+AI102
+acabar

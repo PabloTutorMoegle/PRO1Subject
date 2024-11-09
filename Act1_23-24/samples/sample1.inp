@@ -1,0 +1,21 @@
+50 50
+enregistrarVol
+AI101 Delhi London 10:00 15:00 On-time 200
+enregistrarVol
+AI102 London Delhi 8:45 22:30 On-time 200
+mostrarVols
+enregistrarReserva
+B002 Alice-Brown Confirmed A2 AI101 Credit-Card
+enregistrarReserva
+B001 John-Doe Confirmed A1 AI101 Credit-Card
+enregistrarReserva
+C001 Mia-Lee Pending D18 BA222 Credit-Card
+enregistrarReserva
+C001 Mia-Lee Pending D18 AI102 Credit-Card
+mostrarReserves
+mostrarVols
+mostrarPassatgersVol
+AI101
+mostrarReservesEstat
+Pending
+acabar

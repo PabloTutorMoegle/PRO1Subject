@@ -1,0 +1,28 @@
+10 4
+enregistrarVol
+LX1951 Barcelona Zurich 06:00 07:40 On-time 100
+enregistrarVol
+LX1952 Zurich Barcelona 21:10 22:50 On-time 100
+enregistrarVol
+JQ201 Sydney Auckland 09:05 14:15 Scheduled 100
+enregistrarVol
+JQ202 Auckland Sydney 06:20 08:00 Arrived 100
+mostrarVols
+enregistrarReserva
+C003 Jim-Cohen Hold G2 LX1951 Debit-Card
+enregistrarReserva
+C001 Anna-Lis Confirmed A1 LX1952 Credit-Card
+enregistrarReserva
+C002 Olivia-See Confirmed A2 JQ202 Credit-Card
+enregistrarReserva
+A002 John-Sinnead Pending D22 JQ201 Debit-Card
+enregistrarReserva
+A001 Charles-Fowle Pending C3 LX1951 Credit-Card
+mostrarReserves
+mostrarPassatgersVol
+LX1951
+mostrarPassatgersVol
+JQ201
+mostrarReservesEstat
+Confirmed
+acabar

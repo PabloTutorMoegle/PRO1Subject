@@ -1,0 +1,90 @@
+Jugador Alex creat correctament 
+Jugador Jordi creat correctament 
+Jugador Marta creat correctament 
+ERROR: El jugador Jordi ja existeix 
+Jugador Esteve creat correctament 
+Item Daga creat correctament 
+Item Casc creat correctament 
+Item Capa creat correctament 
+Item Creu_gamada creat correctament 
+ERROR: L'item d'equipament Casc ja existeix 
+Item Creu_daurada creat correctament 
+ERROR: L'item d'equipament Espasa sobrepassa els 30kg 
+Personatge Momo creat correctament per al jugador Alex
+Personatge Lilith creat correctament per al jugador Alex
+Personatge Justine creat correctament per al jugador Alex
+ERROR: El jugador Alex ja té el personatge Momo. No es pot afegir a Marta
+Personatge Sam creat correctament per al jugador Jordi
+ERROR: El pes màxim del personatge Frodo sobrepassa els 75kg: 80
+--------------------
+Tots els jugadors
+Nom: Alex
+Login: Alex71
+Password: 4LeX71
+
+Nom: Jordi
+Login: Jordi80
+Password: 70Rdi80
+
+Nom: Marta
+Login: Marta25
+Password: M4RT4
+
+Nom: Esteve
+Login: Jordi00
+Password: 70Rdi800
+
+--------------------
+Tots els Items d'equipament
+Nom: Daga
+Tipus: Arma
+Pes: 0.3
+
+Nom: Casc
+Tipus: Armadura
+Pes: 2
+
+Nom: Capa
+Tipus: Roba
+Pes: 0.5
+
+Nom: Creu_gamada
+Tipus: Talisma
+Pes: 0.1
+
+Nom: Creu_daurada
+Tipus: Talisma
+Pes: 0.1
+
+--------------------
+Tots els personatges de 
+Nom: Alex
+Login: Alex71
+Password: 4LeX71
+
+Nom: Momo
+Tipus: Guerrer
+Genere: Masculi
+Pes Maxim: 30
+----------
+Nom: Lilith
+Tipus: Paladi
+Genere: Femeni
+Pes Maxim: 45
+----------
+Nom: Justine
+Tipus: Sacerdot
+Genere: Masculi
+Pes Maxim: 50
+----------
+--------------------
+Tots els personatges de 
+Nom: Jordi
+Login: Jordi80
+Password: 70Rdi80
+
+Nom: Sam
+Tipus: Guerrer
+Genere: Masculi
+Pes Maxim: 60
+----------
