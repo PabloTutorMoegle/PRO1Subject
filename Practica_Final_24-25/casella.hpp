@@ -14,14 +14,14 @@ class casella {
     static const char LLIURE='.';
 
     // Atribut on guardar el contingut de la casella.
-    ???? cont;
+    char cont;
     // Atribut per saber si la casella està marcada com a visitada.
-    ???? visitada;
+    bool visitada;
     // Atribut per recordar quina direcció hem de provar si
     // arribem a aquesta casella mentre tornem enrera.
-    ???? next;
+    char next;
     // Recàrrega de bateria que ofereix la casella (entre 0 i 9).
-    ???? bat;
+    int bat;
 
   public:
     // Crea una casella buida, amb valor OBSTACLE, no visitada, direcció inicial i
