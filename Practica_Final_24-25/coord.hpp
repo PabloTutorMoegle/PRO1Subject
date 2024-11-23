@@ -24,3 +24,4 @@ class coord {
     // per exemple:  coord(3,5) == coord(1,-2)
     bool operator==(const coord &) const;
 };
+

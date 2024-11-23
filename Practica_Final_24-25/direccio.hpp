@@ -19,10 +19,10 @@ class direccio {
      direccio();
 
      // Veure si el valor de la direcció és el del final de la llista.
-     ???? is_stop() const;
+     bool is_stop() const;
 
      // Canvia el valor de la direcció, posant-li el primer de la llista.
-     ???? init();
+      const direccio& init();
 
      // Canvia el valor de la direcció pel següent de la llista.
      // Permet usar instruccions "d++" (on d és de tipus direccio).
@@ -33,7 +33,7 @@ class direccio {
      // * La primera component (x) indica la fila i creix de dalt a baix
      // * La segona component (y) indica la columna i creix d'esquerra a dreta
      // per exemple:  NORD -> (-1,0), EST -> (0, 1)
-     ???? despl() const;
+     direccio despl() const;
 
      // Obtenir un string amb el nom de la direcció.
      // Aquest mètode és útil per fer debugging.

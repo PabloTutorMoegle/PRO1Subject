@@ -29,35 +29,35 @@ class casella {
     casella();
 
     // Consulta si la casella és una entrada.
-    ???? es_entrada() const;
+    bool es_entrada() const;
     // Consulta si la casella és una sortida.
-    ???? es_sortida() const;
+    bool es_sortida() const;
     // Consulta si la casella és un obstacle.
-    ???? es_obstacle() const;
+    bool es_obstacle() const;
     // Consulta si la casella està marcada com visitada.
-    ???? es_visitada() const;
+    bool es_visitada() const;
     // Consulta la quantitat de recàrrega de bateria de la casella.
-    ???? bateria() const;
+    int bateria() const;
 
     // Obtè el caràcter que representa el contingut de la casella.
     // 'E' si és entrada, 'S' si és sortida, '#' si és obstacle, 'o' si està
     // visitada, un dígit si hi ha recàrrega de bateria, '.' si està lliure
-    ???? mostrar() const;
+    void mostrar() const;
     // Modifica contingut de la casella.
-    ???? omplir(char);
+    void omplir(char);
 
     // Marca la casella com a visitada.
-    ???? marcar();
+    void marcar();
     // Desmarca la casella com a visitada.
-    ???? desmarcar();
+    void desmarcar();
 
     // Reinicia direccions pendents de provar.
-    ???? iniciar_direccions();
+    direccio iniciar_direccions();
     // Avança a la següent direcció.
-    ???? avancar_direccions();
+    direccio avancar_direccions();
     // Veure si queden direccions pendents per provar.
-    ???? queden_direccions() const;
+    direccio queden_direccions() const;
     // Obtenir la direcció actual pendent de provar.
-    ???? direccio_actual() const;
+    direccio direccio_actual() const;
 };
 

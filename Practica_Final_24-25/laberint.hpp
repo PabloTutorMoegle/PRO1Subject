@@ -15,9 +15,9 @@ class laberint {
    laberint(const std::string &);
 
    // Obté quina és la casella d'entrada del laberint.
-   ???? entrada() const;
+   casella entrada() const;
    // Imprimeix a cout el laberint.
-   ???? mostrar() const;
+   void mostrar() const;
 
    // Accedeix a la casella de la coord donada del laberint.
    casella& operator()(coord);
@@ -26,8 +26,8 @@ class laberint {
    // Taula per guardar les caselles del laberint.
    std::vector<std::vector<casella> > taula;
    // coord marcada com a casella d'entrada.
-   ???? pos_entrada;
+   casella pos_entrada;
    // Indica si una coord és dins del laberint.
-   ???? dins_lab(coord) const;
+   bool dins_lab(coord) const;
 };
 
