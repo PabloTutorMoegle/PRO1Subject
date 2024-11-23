@@ -1,3 +1,7 @@
+#ifndef _CASELLA_HPP
+#define _CASELLA_HPP
+
+#include <iostream>
 #include "direccio.hpp"
 
 //  La classe "casella" guarda la informació de les caselles del laberint
@@ -65,3 +69,4 @@ class casella {
 
 };
 
+#endif

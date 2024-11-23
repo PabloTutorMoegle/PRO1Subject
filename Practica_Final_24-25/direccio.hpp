@@ -1,3 +1,6 @@
+#ifndef _DIRECCIO_HPP
+#define _DIRECCIO_HPP
+
 #include <string>
 #include "coord.hpp"
 
@@ -39,3 +42,5 @@ class direccio {
      // Aquest mètode és útil per fer debugging.
      std::string nom() const;
 };
+
+#endif  

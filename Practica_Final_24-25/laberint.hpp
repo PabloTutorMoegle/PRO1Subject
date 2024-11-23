@@ -1,3 +1,6 @@
+#ifndef _LABERINT_HPP
+#define _LABERINT_HPP
+
 #include <vector>
 #include <string>
 
@@ -31,3 +34,4 @@ class laberint {
    bool dins_lab(coord) const;
 };
 
+#endif

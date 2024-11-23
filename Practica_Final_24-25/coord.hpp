@@ -1,3 +1,8 @@
+#ifndef _COORD_HPP
+#define _COORD_HPP
+
+#include <iostream>
+
 // La classe "coord" guarda una parella de coordenades enteres en el pla 2D
 
 class coord {
@@ -28,3 +33,4 @@ class coord {
     friend std::ostream &operator<<(std::ostream &os, const coord &c);
 };
 
+#endif
