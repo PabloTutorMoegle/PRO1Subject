@@ -14,14 +14,17 @@ class coord {
     // inicialitzar variables del tipus, per exemple: coord p(3,5);
     // i també permet construir objectes del tipus "coord" sense
     // declarar cap variable, per exemple:  if (lab.entrada() == coord(4,5))...
-    coord(int, int);
+    coord(int x, int y);
 
     // Suma a la coordenada actual el parell de coordenades donat,
     // per exemple:  coord(3,5) + coord(1,-2) donaria la coordenada (4,3)
-    coord operator+(const coord &) const;
+    coord operator+(const coord &c) const;
 
     // Igualtat entre dues coordenades,
     // per exemple:  coord(3,5) == coord(1,-2)
-    bool operator==(const coord &) const;
+    bool operator==(const coord &c) const;
+
+    // metode de escritura
+    friend std::ostream &operator<<(std::ostream &os, const coord &c);
 };
 

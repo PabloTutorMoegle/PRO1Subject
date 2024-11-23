@@ -12,15 +12,15 @@ class laberint {
    //  Constructora. Serveix per declarar una variable
    //  de tipus "laberint", donant el fitxer que en conté
    //  les dades. Per exemple:  laberint lab("laber1.txt")
-   laberint(const std::string &);
+   laberint(const std::string &s);
 
    // Obté quina és la casella d'entrada del laberint.
-   casella entrada() const;
+   coord entrada() const;
    // Imprimeix a cout el laberint.
    void mostrar() const;
 
    // Accedeix a la casella de la coord donada del laberint.
-   casella& operator()(coord);
+   casella& operator()(coord &c);
 
  private:
    // Taula per guardar les caselles del laberint.

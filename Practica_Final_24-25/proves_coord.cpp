@@ -11,17 +11,17 @@ int main() {
   cout << " Entreu coordenades: ";
   cin >> x >> y;
   // Crea variable coord amb aquestes coordenades
-  coord p(????);
+  coord p(x, y);
 
   cout << " Entreu desplacament: ";
   cin >> x >> y;
   // Crear variable coord amb aquestes coordenades
-  coord d(????);
+  coord d(x, y);
 
   // Suma els dos parells de coordenades p + d
-  coord z = ????;
+  coord z = p + d;
   cout << "("<<p.x<<","<<p.y<<") + ("<<d.x<<","<<d.y<<") = ("<<z.x<<","<<z.y<<")" << endl;
 
   // Comprova si les coordenades p i d són iguals
-  cout << "("<<p.x<<","<<p.y<<") i ("<<d.x<<","<<d.y<<") són iguals? " << ???? << endl;
+  cout << "("<<p.x<<","<<p.y<<") i ("<<d.x<<","<<d.y<<") són iguals? " << (p == d) << endl;
 }

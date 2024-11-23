@@ -6,15 +6,15 @@ using namespace std;
 // Funció que ensenya el que té la casella per dins, usant
 // els mètodes de la classe.
 void llistar_casella(casella c) {
-  cout << "["<<c.mostrar()<<"]";
+  cout << "[" << c.mostrar() << "]";
   cout << boolalpha;
-  cout <<  "  visitada="  << c.????;
-  cout << ", obstacle="   << c.????;
-  cout << ", entrada="    << c.????;
-  cout << ", sortida="    << c.???? << endl;
-  cout << "     bateria=" << c.????;
-  cout << ", next="       << c.????.nom();
-  cout << ", queden="     << c.???? << endl;
+  cout <<  "  visitada="  << c.es_visitada();
+  cout << ", obstacle="   << c.es_obstacle();
+  cout << ", entrada="    << c.es_entrada();
+  cout << ", sortida="    << c.es_sortida() << endl;
+  cout << "     bateria=" << c.bateria();
+  cout << ", next="       << c.avancar_direccions().nom();
+  cout << ", queden="     << c.queden_direccions() << endl;
   cout << endl;
 }
 

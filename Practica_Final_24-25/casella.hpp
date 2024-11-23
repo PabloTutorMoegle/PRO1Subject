@@ -44,7 +44,7 @@ class casella {
     // visitada, un dígit si hi ha recàrrega de bateria, '.' si està lliure
     void mostrar() const;
     // Modifica contingut de la casella.
-    void omplir(char);
+    void omplir(char c);
 
     // Marca la casella com a visitada.
     void marcar();
@@ -59,5 +59,9 @@ class casella {
     direccio queden_direccions() const;
     // Obtenir la direcció actual pendent de provar.
     direccio direccio_actual() const;
+
+    //motode de escriture d'una coordenada
+    friend std::ostream &operator<<(std::ostream &os, const casella &c);
+
 };
 
