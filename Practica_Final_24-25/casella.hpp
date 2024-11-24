@@ -46,7 +46,7 @@ class casella {
     // Obtè el caràcter que representa el contingut de la casella.
     // 'E' si és entrada, 'S' si és sortida, '#' si és obstacle, 'o' si està
     // visitada, un dígit si hi ha recàrrega de bateria, '.' si està lliure
-    void mostrar() const;
+    char mostrar() const;
     // Modifica contingut de la casella.
     void omplir(char c);
 

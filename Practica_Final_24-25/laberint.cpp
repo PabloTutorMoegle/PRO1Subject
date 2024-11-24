@@ -27,9 +27,9 @@ coord laberint::entrada() const
 {
     bool trobat = false;
     coord c;
-    for (int i = 0; i < taula.size() && trobat == false; i++)
+    for (int i = 0; i < (int)taula.size() && trobat == false; i++)
     {
-        for (int j = 0; j < taula[i].size() && trobat == false; j++)
+        for (int j = 0; j < (int)taula[i].size() && trobat == false; j++)
         {
             if (taula[i][j].es_entrada())
             {
@@ -43,9 +43,9 @@ coord laberint::entrada() const
 // Imprimeix a cout el laberint.
 void laberint::mostrar() const
 {
-    for (int i = 0; i < taula.size(); i++)
+    for (int i = 0; i < (int)taula.size(); i++)
     {
-        for (int j = 0; j < taula[i].size(); j++)
+        for (int j = 0; j < (int)taula[i].size(); j++)
         {
             taula[i][j].mostrar();
         }

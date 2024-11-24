@@ -16,3 +16,4 @@ coord.o: coord.cpp coord.hpp
 
 clean:
 	rm -f *.exe *.o
+

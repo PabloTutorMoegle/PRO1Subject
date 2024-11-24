@@ -42,9 +42,9 @@ int casella::bateria() const
 // Obtè el caràcter que representa el contingut de la casella.
 // 'E' si és entrada, 'S' si és sortida, '#' si és obstacle, 'o' si està
 // visitada, un dígit si hi ha recàrrega de bateria, '.' si està lliure
-void casella::mostrar() const
+char casella::mostrar() const
 {
-    cout << cont;
+    return cont;
 }
 // Modifica contingut de la casella.
 void casella::omplir(char c)
@@ -67,22 +67,26 @@ void casella::desmarcar()
 // Reinicia direccions pendents de provar.
 direccio casella::iniciar_direccions()
 {
-
+    direccio d = direccio();
+    return d;
 }
 // Avança a la següent direcció.
 direccio casella::avancar_direccions()
 {
     bat -= 1;
+    return direccio();
 }
 // Veure si queden direccions pendents per provar.
 direccio casella::queden_direccions() const
 {
-
+    direccio d = direccio();
+    return d;
 }
 // Obtenir la direcció actual pendent de provar.
 direccio casella::direccio_actual() const
 {
-
+    direccio d = direccio();
+    return d;
 }
 
 //motode de escriture d'una coordenada

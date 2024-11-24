@@ -19,13 +19,17 @@ bool direccio::is_stop() const
 const direccio& direccio::init()
 {
     d = NORD;
+    return *this;
 }
 
 // Canvia el valor de la direcció pel següent de la llista.
 // Permet usar instruccions "d++" (on d és de tipus direccio).
 const direccio& direccio::operator++()
 {
-    d = static_cast<dirs>((d + 1) % 4);
+    // Si no és STOP, incrementa el valor de la direcció es decir pasamos a la siguiente direccion del enum
+    if (d != STOP)
+        d = static_cast<dirs>(d + 1);
+    return *this;
 }
 
 // Obté la coordenada de components x,y que significa un moviment en
@@ -45,6 +49,10 @@ coord direccio::despl() const
         return coord(1, 0);
     case OEST:
         return coord(0, -1);
+    case STOP:
+        return coord(0, 0);
+    default:
+        return coord(0, 0);
     }
 }
 
@@ -62,5 +70,16 @@ string direccio::nom() const
         return "SUD";
     case OEST:
         return "OEST";
+    case STOP:
+        return "STOP";
+    default:
+        return "ERROR";
     }
+}
+
+//metode escritura
+ostream &operator<<(ostream &os, const direccio &d)
+{
+    os << d.nom();
+    return os;
 }

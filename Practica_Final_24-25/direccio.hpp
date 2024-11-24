@@ -41,6 +41,9 @@ class direccio {
      // Obtenir un string amb el nom de la direcció.
      // Aquest mètode és útil per fer debugging.
      std::string nom() const;
+
+     //metode escritura 
+     friend std::ostream &operator<<(std::ostream &os, const direccio &d);
 };
 
 #endif  

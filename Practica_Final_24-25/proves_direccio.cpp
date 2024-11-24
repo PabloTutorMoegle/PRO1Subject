@@ -18,7 +18,7 @@ int main() {
   while (not dir.is_stop()) {
     // Obtenir el moviment en (x,y) que suposa la direccio dir,
     // i sumar-lo a la coordenada base (p)
-    coord z= p + dir.despl();
+    coord z = p + dir.despl();
 
     // Imprimeix resultat
     cout << "("<<p.x<<","<<p.y<<") + " << dir.despl() << " = ("<<z.x<<","<<z.y<<")" << endl;

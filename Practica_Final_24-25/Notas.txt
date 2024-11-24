@@ -1,0 +1,3 @@
+hay que revisar las clases de casella y laberint esas dos dan problemas 
+sobretodo la de casella
+^_^
