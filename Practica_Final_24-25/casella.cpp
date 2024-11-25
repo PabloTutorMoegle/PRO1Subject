@@ -95,3 +95,5 @@ ostream &operator<<(ostream &os, const casella &c)
     os << c.cont;
     return os;
 }
+
+//edu ha estado aqui
