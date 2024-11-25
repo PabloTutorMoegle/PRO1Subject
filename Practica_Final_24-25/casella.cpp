@@ -7,7 +7,7 @@ using namespace std;
 // bateria a zero.
 casella::casella()
 {
-    cont = OBSTACLE;
+    cont = LLIURE;
     visitada = false;
     next = 'N';
     bat = 0;
@@ -31,7 +31,7 @@ bool casella::es_obstacle() const
 // Consulta si la casella està marcada com visitada.
 bool casella::es_visitada() const
 {
-    return visitada;
+    return cont == visitada;
 }
 // Consulta la quantitat de recàrrega de bateria de la casella.
 int casella::bateria() const
@@ -62,6 +62,7 @@ void casella::marcar()
 void casella::desmarcar()
 {
     cont = LLIURE;
+    visitada = false;
 }
 
 // Reinicia direccions pendents de provar.
@@ -73,8 +74,8 @@ direccio casella::iniciar_direccions()
 // Avança a la següent direcció.
 direccio casella::avancar_direccions()
 {
-    bat -= 1;
-    return direccio();
+   ++dir;
+   return dir;
 }
 // Veure si queden direccions pendents per provar.
 direccio casella::queden_direccions() const

@@ -27,6 +27,8 @@ class casella {
     // Recàrrega de bateria que ofereix la casella (entre 0 i 9).
     int bat;
 
+    direccio dir;
+
   public:
     // Crea una casella buida, amb valor OBSTACLE, no visitada, direcció inicial i
     // bateria a zero.
