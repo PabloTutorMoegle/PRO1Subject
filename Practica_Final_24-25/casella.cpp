@@ -78,16 +78,14 @@ direccio casella::avancar_direccions()
    return dir;
 }
 // Veure si queden direccions pendents per provar.
-direccio casella::queden_direccions() const
+bool casella::queden_direccions() const
 {
-    direccio d = direccio();
-    return d;
+    return !dir.is_stop();
 }
 // Obtenir la direcció actual pendent de provar.
-direccio casella::direccio_actual() const
+void casella::direccio_actual() const
 {
-    direccio d = direccio();
-    return d;
+    cout << dir.nom() << endl;
 }
 
 //motode de escriture d'una coordenada
