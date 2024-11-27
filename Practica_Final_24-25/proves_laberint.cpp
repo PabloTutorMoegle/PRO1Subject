@@ -1,12 +1,15 @@
 #include <iostream>
 #include "laberint.hpp"
+#include "direccio.hpp"
+#include "coord.hpp"
+
 
 using namespace std;
 
 int main() {
 
   /// carregar el laberint del fitxer
-  laberint lab("laberint.0.txt");
+  laberint lab("./proves/laberint.0.txt");
 
   cout << "Laberint carregat" << endl;
   /// dibuixar el laberint
