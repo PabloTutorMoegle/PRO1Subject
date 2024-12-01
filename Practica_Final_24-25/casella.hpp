@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "direccio.hpp"
+#include "coord.hpp"
 
 //  La classe "casella" guarda la informació de les caselles del laberint
 //  És una classe privada a la que no es pot accedir (ni cal) des del

@@ -18,3 +18,4 @@ clean:
 	rm -f *.exe *.o
 
 # g++ -D_JUDGE_ -D_GLIBCXX_DEBUG -O2 -Wall -Wextra -Werror -Wno-sign-compare -std=c++11 -o program.exe proves_casella.cpp casella.cpp direccio.cpp coord.cpp
+# g++ -D_JUDGE_ -D_GLIBCXX_DEBUG -O2 -Wall -Wextra -Werror -Wno-sign-compare -std=c++11 -o program.exe proves_laberint.cpp laberint.cpp direccio.cpp coord.cpp casella.cpp

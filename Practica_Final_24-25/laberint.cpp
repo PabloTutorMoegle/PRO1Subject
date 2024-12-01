@@ -26,6 +26,10 @@ laberint::laberint(const std::string &s)
             char ch;
             file >> ch;
             taula[i][j].omplir(ch);
+            if (ch == 'E')
+            {
+                pos_entrada = taula[i][j];
+            }
         }
     }
     file.close();
@@ -34,21 +38,23 @@ laberint::laberint(const std::string &s)
 // Obté quina és la casella d'entrada del laberint.
 coord laberint::entrada() const
 {
-    bool trobat = false;
-    coord c;
-    for (int i = 0; i < (int)taula.size() && trobat == false; i++)
+    coord c(-1, -1);
+    for (int i = 0; i < (int)taula.size(); i++)
     {
-        for (int j = 0; j < (int)taula[i].size() && trobat == false; j++)
+        for (int j = 0; j < (int)taula[i].size(); j++)
         {
             if (taula[i][j].es_entrada())
             {
-                trobat = true;
-                c = coord(i, j);
+                c.x = i;
+                c.y = j;
+                return c;
             }
         }
     }
+
     return c;
 }
+
 // Imprimeix a cout el laberint.
 void laberint::mostrar() const
 {

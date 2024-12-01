@@ -5,6 +5,7 @@
 #include <string>
 
 #include "casella.hpp"
+#include "coord.hpp"
 
 //  La classe "laberint" és l'estructura de dades principal de la
 //  pràctica. Guarda la taula NxM amb la informació de les caselles.

@@ -25,7 +25,7 @@ int main() {
   // Comprovar que podem accedir a diferents caselles del laberint
   direccio d;
   // Per cada direccio possible des de l'entrada
-  for (d.init(); not d.is_stop(); ++d) {
+  for (d.init(); d.is_stop() != true; ++d) {
     coord z = lab.entrada() + d.despl();
     cout << d.nom()<<" -> casella ("<<z.x<<","<<z.y<<") = " << lab(z) << endl;
   }
