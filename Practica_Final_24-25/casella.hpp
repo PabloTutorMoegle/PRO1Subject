@@ -17,6 +17,8 @@ class casella {
     static const char ENTRADA='E';
     static const char SORTIDA='S';
     static const char LLIURE='.';
+    static const char VISITADA='o';
+    static const char ERROR='X';
 
     // Atribut on guardar el contingut de la casella.
     char cont;
@@ -45,6 +47,8 @@ class casella {
     bool es_visitada() const;
     // Consulta la quantitat de recàrrega de bateria de la casella.
     int bateria() const;
+
+    void casella_erronea();
 
     // Obtè el caràcter que representa el contingut de la casella.
     // 'E' si és entrada, 'S' si és sortida, '#' si és obstacle, 'o' si està

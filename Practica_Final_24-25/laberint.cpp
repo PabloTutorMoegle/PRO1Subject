@@ -68,8 +68,22 @@ void laberint::mostrar() const
     }
 }
 
+bool laberint::dins_lab(const coord &c)
+{
+    return c.x >= 0 && c.x < (int)taula.size() && c.y >= 0 && c.y < (int)taula[0].size();
+}
+
 // Accedeix a la casella de la coord donada del laberint.
 casella& laberint::operator()(coord &c)
 {
-    return taula[c.x][c.y];
+    if (!dins_lab(c))
+    {
+        static casella cas;
+        cas.casella_erronea();
+        return cas;
+    }
+    else
+    {
+        return taula[c.x][c.y];
+    }
 }

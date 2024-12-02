@@ -31,6 +31,8 @@ class laberint
     // Imprimeix a cout el laberint.
     void mostrar() const;
 
+    bool dins_lab(const coord &c);
+
     // Accedeix a la casella de la coord donada del laberint.
     casella& operator()(coord &c);
 };

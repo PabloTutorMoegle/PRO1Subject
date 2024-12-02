@@ -25,7 +25,7 @@ class direccio {
      bool is_stop() const;
 
      // Canvia el valor de la direcció, posant-li el primer de la llista.
-      const direccio& init();
+     const direccio& init();
 
      // Canvia el valor de la direcció pel següent de la llista.
      // Permet usar instruccions "d++" (on d és de tipus direccio).

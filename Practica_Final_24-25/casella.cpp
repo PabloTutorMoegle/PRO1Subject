@@ -39,6 +39,11 @@ int casella::bateria() const
     return bat;
 }
 
+void casella::casella_erronea()
+{
+    cont = ERROR;
+}
+
 // Obtè el caràcter que representa el contingut de la casella.
 // 'E' si és entrada, 'S' si és sortida, '#' si és obstacle, 'o' si està
 // visitada, un dígit si hi ha recàrrega de bateria, '.' si està lliure

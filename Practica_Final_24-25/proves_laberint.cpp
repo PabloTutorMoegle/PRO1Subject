@@ -26,7 +26,7 @@ int main() {
   direccio d;
   // Per cada direccio possible des de l'entrada
   for (d.init(); d.is_stop() != true; ++d) {
-    coord z = lab.entrada() + d.despl();
+    coord z = p + d.despl();
     cout << d.nom()<<" -> casella ("<<z.x<<","<<z.y<<") = " << lab(z) << endl;
   }
   cout << endl;
