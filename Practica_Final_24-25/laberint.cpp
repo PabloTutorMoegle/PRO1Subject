@@ -4,6 +4,12 @@
 
 using namespace std;
 
+
+bool laberint::dins_lab(coord c) const
+{
+    return c.x >= 0 && c.x < (int)taula.size() && c.y >= 0 && c.y < (int)taula[0].size();
+}
+
 //  Constructora. Serveix per declarar una variable
 //  de tipus "laberint", donant el fitxer que en conté
 //  les dades. Per exemple:  laberint lab("laber1.txt")
@@ -66,11 +72,6 @@ void laberint::mostrar() const
         }
         cout << endl;
     }
-}
-
-bool laberint::dins_lab(const coord &c)
-{
-    return c.x >= 0 && c.x < (int)taula.size() && c.y >= 0 && c.y < (int)taula[0].size();
 }
 
 // Accedeix a la casella de la coord donada del laberint.
