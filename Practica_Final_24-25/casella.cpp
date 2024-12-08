@@ -33,6 +33,11 @@ bool casella::es_visitada() const
 {
     return cont == visitada;
 }
+// Consulta si la casella és una recàrrega de bateria.
+bool casella::es_energia() const
+{
+    return bat > 0;
+}
 // Consulta la quantitat de recàrrega de bateria de la casella.
 int casella::bateria() const
 {
