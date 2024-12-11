@@ -61,6 +61,7 @@ bool buscar_sortida_it (laberint &lab, int eng)
     cout << "Energia: " << eng << endl;
     if(trobat_sortida==false and casella_trobada==false)   //después de ni haber encontrado la salida ni otra casilla para seguir, retrocede una casilla
     {
+      lab(c).marcar();
       pila.pop();
       c=pila.top();
     }
