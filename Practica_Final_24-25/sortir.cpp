@@ -56,12 +56,13 @@ bool buscar_sortida_it (laberint &lab, int eng)
         }
     eng--;
     if (eng == 0) {
-      energia_acaba=true;
+      energia_acaba=true;               //si la energía termina, el bucle while termina y devuelve false SIEMPRE Y CUANDO NO HAYA TERMINADO PERO ESTÉ EN LA SALIDA
     }
     cout << "Energia: " << eng << endl;
     if(trobat_sortida==false and casella_trobada==false)   //después de ni haber encontrado la salida ni otra casilla para seguir, retrocede una casilla
     {
       pila.pop();
+      c=pila.top();
     }
   }
   return trobat_sortida;
