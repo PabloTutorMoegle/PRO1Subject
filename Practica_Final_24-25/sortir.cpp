@@ -29,20 +29,27 @@ bool buscar_sortida_it (laberint &lab, int eng)
   bool energia_acaba=false;
   stack<coord> pila;
   coord c = lab.entrada();
+  
   pila.push(c);
 
   while (!pila.empty() and trobat_sortida==false and energia_acaba==false) {
+    cout<<"Estat abans: "<< lab(c).mostrar() <<endl;
 
+    lab(c).marcar();
+    cout<<"Estat despres: "<< lab(c).mostrar() <<endl;
     direccio d;
+    
     bool casella_trobada=false;
     for (d.init(); d.is_stop() != true and casella_trobada==false; ++d) {
       
       coord z = c + d.despl();
+      cout<<"Estat coordenada z: "<<lab(z).mostrar()<<" "<<lab(z).es_visitada()<<endl;
       if(!lab(z).es_visitada() and !lab(z).es_obstacle()){
         pila.push(z);
-        lab(z).marcar();
         casella_trobada=true;
+        cout<<"Avança al "<<d<<endl;
       }
+      
     }
 
     c=pila.top();
@@ -59,11 +66,13 @@ bool buscar_sortida_it (laberint &lab, int eng)
       energia_acaba=true;               //si la energía termina, el bucle while termina y devuelve false SIEMPRE Y CUANDO NO HAYA TERMINADO PERO ESTÉ EN LA SALIDA
     }
     cout << "Energia: " << eng << endl;
+    
     if(trobat_sortida==false and casella_trobada==false)   //después de ni haber encontrado la salida ni otra casilla para seguir, retrocede una casilla
     {
       lab(c).marcar();
       pila.pop();
       c=pila.top();
+      lab(c).desmarcar();
     }
   }
   return trobat_sortida;
