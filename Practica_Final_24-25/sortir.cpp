@@ -58,7 +58,7 @@ bool buscar_sortida_it (laberint &lab, int eng)
 
     eng--;
     if (eng == 0) {
-      trobat_sortida== false;
+      trobat_sortida=false;
     }
     cout << "Energia: " << eng << endl;
     if(trobat_sortida==false and casella_trobada==false)   //después de ni haber encontrado la salida ni otra casilla para seguir, retrocede una casilla
