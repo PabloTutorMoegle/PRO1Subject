@@ -46,7 +46,7 @@ int casella::bateria() const
 
 void casella::casella_erronea()
 {
-    cont = ERROR;
+    cont = OBSTACLE;
 }
 
 // Obtè el caràcter que representa el contingut de la casella.

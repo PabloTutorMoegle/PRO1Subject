@@ -18,7 +18,6 @@ class casella {
     static const char SORTIDA='S';
     static const char LLIURE='.';
     static const char VISITADA='o';
-    static const char ERROR='#';
 
     // Atribut on guardar el contingut de la casella.
     char cont;

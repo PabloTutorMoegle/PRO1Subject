@@ -28,55 +28,37 @@ bool buscar_sortida_it (laberint &lab, int eng)
   stack<coord> pila;
   coord c = lab.entrada();
   pila.push(c);
-  while (!pila.empty())
-  {
-      c = pila.top();
-      pila.pop();
-      if (lab(c).es_sortida())
+
+  while (!pila.empty()) {
+    c = pila.top();
+    pila.pop();
+    if (lab(c).es_sortida()) 
+    {
+      return true;
+    }
+    
+    if (lab(c).es_energia()) {
+      eng += lab(c).bateria();
+      cout << "Recàrrega de bateria: " << lab(c).bateria() << endl;
+    }
+
+    direccio d;
+    for (d.init(); d.is_stop() != true; ++d) {
+      coord z = c + d.despl();
+      if(!lab(z).es_visitada() && !lab(z).es_obstacle())
       {
-          return true;
+        pila.push(z);
+        lab(z).marcar();
       }
-      if (lab(c).es_obstacle() || lab(c).es_visitada())
-      {
-          continue;
-      }
-      lab(c).marcar();
-      if (test)
-      {
-          dibuixar(lab, eng, 0.1);
-      }
-      if (lab(c).es_energia())
-      {
-          eng++;
-      }
-      if (eng > 0)
-      {
-          coord c2 = c;
-          c2.x++;
-          if (lab.dins_labP(c2))
-          {
-              pila.push(c2);
-          }
-          c2 = c;
-          c2.x--;
-          if (lab.dins_labP(c2))
-          {
-              pila.push(c2);
-          }
-          c2 = c;
-          c2.y++;
-          if (lab.dins_labP(c2))
-          {
-              pila.push(c2);
-          }
-          c2 = c;
-          c2.y--;
-          if (lab.dins_labP(c2))
-          {
-              pila.push(c2);
-          }
-      }
+    }
+    eng--;
+    if (eng == 0) {
+      return false;
+    }
+    cout << "Energia: " << eng << endl;
   }
+
+  
   return false;
 }
 

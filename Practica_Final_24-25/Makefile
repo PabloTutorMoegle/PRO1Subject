@@ -12,7 +12,7 @@ distclean:
 	rm -f *.exe *.o
 
 # Para probar el programa con el fichero de entrada "laberint.txt" ejecutar 
-# el siguiente comando: ./sortir.exe < proves/laberint.0.txt 100 i
+# el siguiente comando: ./sortir.exe proves/laberint.0.txt 100 i
 # proves/laberint.0.txt = fichero de entrada con el laberinto
 # 100 = cantidad de bateria inicial
 # i = iterativo (para ejecutar el algoritmo de forma iterativa)
