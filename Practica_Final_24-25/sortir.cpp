@@ -26,11 +26,12 @@ void dibuixar(laberint lab, int en, float t) {
 bool buscar_sortida_it (laberint &lab, int eng) 
 {
   bool trobat_sortida=false;
+  bool energia_acaba=false;
   stack<coord> pila;
   coord c = lab.entrada();
   pila.push(c);
 
-  while (!pila.empty() and trobat_sortida==false) {
+  while (!pila.empty() and trobat_sortida==false and energia_acaba==false) {
 
     direccio d;
     bool casella_trobada=false;
@@ -58,7 +59,7 @@ bool buscar_sortida_it (laberint &lab, int eng)
 
     eng--;
     if (eng == 0) {
-      trobat_sortida=false;
+      energia_acaba=false;
     }
     cout << "Energia: " << eng << endl;
     if(trobat_sortida==false and casella_trobada==false)   //después de ni haber encontrado la salida ni otra casilla para seguir, retrocede una casilla
@@ -66,8 +67,6 @@ bool buscar_sortida_it (laberint &lab, int eng)
       pila.pop();
     }
   }
-
-  
   return trobat_sortida;
 }
 
