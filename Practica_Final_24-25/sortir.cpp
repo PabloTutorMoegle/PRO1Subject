@@ -25,41 +25,50 @@ void dibuixar(laberint lab, int en, float t) {
 // Solució ITERATIVA: buscar sortida del laberint lab amb energia eng usant una pila.
 bool buscar_sortida_it (laberint &lab, int eng) 
 {
+  bool trobat_sortida=false;
   stack<coord> pila;
   coord c = lab.entrada();
   pila.push(c);
 
-  while (!pila.empty()) {
-    c = pila.top();
-    pila.pop();
-    if (lab(c).es_sortida()) 
-    {
-      return true;
-    }
-    
-    if (lab(c).es_energia()) {
-      eng += lab(c).bateria();
-      cout << "Recàrrega de bateria: " << lab(c).bateria() << endl;
-    }
+  while (!pila.empty() and trobat_sortida==false) {
 
     direccio d;
-    for (d.init(); d.is_stop() != true; ++d) {
+    bool casella_trobada=false;
+    for (d.init(); d.is_stop() != true and casella_trobada==false; ++d) {
+      
       coord z = c + d.despl();
-      if(!lab(z).es_visitada() && !lab(z).es_obstacle())
-      {
+      if(!lab(z).es_visitada() and !lab(z).es_obstacle()){
         pila.push(z);
         lab(z).marcar();
+        casella_trobada=true;
       }
     }
+
+    c=pila.top();
+
+    if (lab(c).es_sortida()){
+          trobat_sortida=true;
+        }
+    if (lab(c).es_energia()) {
+          eng += lab(c).bateria();
+          cout << "Recàrrega de bateria: " << lab(c).bateria() << endl;
+        }
+
+
+
     eng--;
     if (eng == 0) {
-      return false;
+      trobat_sortida== false;
     }
     cout << "Energia: " << eng << endl;
+    if(trobat_sortida==false and casella_trobada==false)   //después de ni haber encontrado la salida ni otra casilla para seguir, retrocede una casilla
+    {
+      pila.pop();
+    }
   }
 
   
-  return false;
+  return trobat_sortida;
 }
 
 
