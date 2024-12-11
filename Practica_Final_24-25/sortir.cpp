@@ -54,12 +54,9 @@ bool buscar_sortida_it (laberint &lab, int eng)
           eng += lab(c).bateria();
           cout << "Recàrrega de bateria: " << lab(c).bateria() << endl;
         }
-
-
-
     eng--;
     if (eng == 0) {
-      energia_acaba=false;
+      energia_acaba=true;
     }
     cout << "Energia: " << eng << endl;
     if(trobat_sortida==false and casella_trobada==false)   //después de ni haber encontrado la salida ni otra casilla para seguir, retrocede una casilla
