@@ -1,18 +1,19 @@
 CXX = g++
 CXXFLAGS = -D_JUDGE_ -D_GLIBCXX_DEBUG -O2 -Wall -Wextra -Werror -Wno-sign-compare -std=c++11
 
-sortir.exe: sortir.o laberint.o direccio.o casella.o coord.o
-	$(CXX) -o sortir.exe sortir.o
+SRCS = sortir.cpp laberint.cpp direccio.cpp casella.cpp coord.cpp
 
-sortir.o: sortir.cpp laberint.hpp casella.hpp direccio.hpp coord.hpp
+TARGET = sortir.exe
 
-laberint.o: laberint.cpp laberint.hpp casella.hpp
+$(TARGET): $(SRCS)
+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRCS)
 
-direccio.o: direccio.cpp direccio.hpp coord.hpp
-
-casella.o: casella.cpp casella.hpp direccio.hpp
-
-coord.o: coord.cpp coord.hpp
-
-clean:
+distclean:
 	rm -f *.exe *.o
+
+# Para probar el programa con el fichero de entrada "laberint.txt" ejecutar 
+# el siguiente comando: ./sortir.exe < proves/laberint.0.txt 100 i
+# proves/laberint.0.txt = fichero de entrada con el laberinto
+# 100 = cantidad de bateria inicial
+# i = iterativo (para ejecutar el algoritmo de forma iterativa)
+# en lugar de una "i" se puede poner una "r" para ejecutar el algoritmo de forma recursiva

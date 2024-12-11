@@ -5,6 +5,9 @@
 
 #include "util.hpp"
 #include "laberint.hpp"
+#include "coord.hpp"
+#include "casella.hpp"
+#include "direccio.hpp"
 
 using namespace std;
 
@@ -18,7 +21,6 @@ void dibuixar(laberint lab, int en, float t) {
   cout << "Energia: " << en << endl;
   util::espera(t);
 }
-
 
 // Solució ITERATIVA: buscar sortida del laberint lab amb energia eng usant una pila.
 bool buscar_sortida_it (laberint &lab, int eng) 
@@ -80,8 +82,11 @@ bool buscar_sortida_it (laberint &lab, int eng)
 
 
 // Solució RECURSIVA: buscar sortida del laberint lab amb energia eng.
-bool buscar_sortida_rec (laberint &lab, int eng) {
-
+bool buscar_sortida_rec (laberint &lab, int eng) 
+{
+  lab.mostrar();
+  cout << "Energia: " << eng << endl;
+  return true;
 }
 
 
