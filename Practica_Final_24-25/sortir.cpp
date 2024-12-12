@@ -28,53 +28,69 @@ bool buscar_sortida_it (laberint &lab, int eng)
   bool trobat_sortida=false;
   bool energia_acaba=false;
   stack<coord> pila;
+  stack<direccio> camino;
   coord c = lab.entrada();
   
   pila.push(c);
 
   while (!pila.empty() and trobat_sortida==false and energia_acaba==false) {
-    cout<<"Estat abans: "<< lab(c).mostrar() <<endl;
+    //cout<<"Estat abans: "<< lab(c).mostrar() <<endl;
 
     lab(c).marcar();
-    cout<<"Estat despres: "<< lab(c).mostrar() <<endl;
-    direccio d;
+    //cout<<"Estat despres: "<< lab(c).mostrar() <<endl;
     
     bool casella_trobada=false;
-    for (d.init(); d.is_stop() != true and casella_trobada==false; ++d) {
+    bool avanza = false;
+    for (direccio d = lab(c).direccio_actual(); d.is_stop() != true and casella_trobada==false; ++d) {
       
       coord z = c + d.despl();
-      cout<<"Estat coordenada z: "<<lab(z).mostrar()<<" "<<lab(z).es_visitada()<<endl;
+      //cout << "Estat coordenada z: " << lab(z).mostrar() << " " << lab(z).es_visitada() << endl;
       if(!lab(z).es_visitada() and !lab(z).es_obstacle()){
         pila.push(z);
         casella_trobada=true;
-        cout<<"Avança al "<<d<<endl;
-      }
-      
+        cout << d << endl;
+        camino.push(d);
+        avanza = true;
+      }      
     }
+    if(!avanza)
+    {
+      eng++;
+      eng++;
+      camino.pop();
+    } 
 
-    c=pila.top();
+    c = pila.top();
 
-    if (lab(c).es_sortida()){
-          trobat_sortida=true;
-        }
-    if (lab(c).es_energia()) {
-          eng += lab(c).bateria();
-          cout << "Recàrrega de bateria: " << lab(c).bateria() << endl;
-        }
+    if (lab(c).es_sortida())
+    {
+      trobat_sortida=true;
+    }
+    if (lab(c).es_energia()) 
+    {
+      eng += lab(c).bateria();
+      //cout << "Recàrrega de bateria: " << lab(c).bateria() << endl;
+    }
     eng--;
-    if (eng == 0) {
+    if (eng == 0) 
+    {
       energia_acaba=true;               //si la energía termina, el bucle while termina y devuelve false SIEMPRE Y CUANDO NO HAYA TERMINADO PERO ESTÉ EN LA SALIDA
     }
+
     cout << "Energia: " << eng << endl;
     
     if(trobat_sortida==false and casella_trobada==false)   //después de ni haber encontrado la salida ni otra casilla para seguir, retrocede una casilla
     {
       lab(c).marcar();
       pila.pop();
-      c=pila.top();
+      c = pila.top();
       lab(c).desmarcar();
     }
+    if(avanza) cout << "-";
+    dibuixar(lab, eng, 0.2);
   }
+  cout << "Camí final " << camino.size() << endl;
+  cout << eng << endl;
   return trobat_sortida;
 }
 

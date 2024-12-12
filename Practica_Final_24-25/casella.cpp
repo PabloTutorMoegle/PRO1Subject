@@ -31,7 +31,7 @@ bool casella::es_obstacle() const
 // Consulta si la casella està marcada com visitada.
 bool casella::es_visitada() const
 {
-    return cont == visitada;
+    return visitada;
 }
 // Consulta si la casella és una recàrrega de bateria.
 bool casella::es_energia() const
@@ -65,7 +65,7 @@ void casella::omplir(char c)
 // Marca la casella com a visitada.
 void casella::marcar()
 {
-    cont = 'o';
+    cont = VISITADA;
     visitada = true;
 }
 // Desmarca la casella com a visitada.
@@ -93,9 +93,9 @@ bool casella::queden_direccions() const
     return !dir.is_stop();
 }
 // Obtenir la direcció actual pendent de provar.
-void casella::direccio_actual() const
+direccio casella::direccio_actual() const
 {
-    cout << dir.nom() << endl;
+    return dir;
 }
 
 //motode de escriture d'una coordenada

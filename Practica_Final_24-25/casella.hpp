@@ -70,7 +70,7 @@ class casella {
     // Veure si queden direccions pendents per provar.
     bool queden_direccions() const;
     // Obtenir la direcció actual pendent de provar.
-    void direccio_actual() const;
+    direccio direccio_actual() const;
 
     //motode de escriture d'una coordenada
     friend std::ostream &operator<<(std::ostream &os, const casella &c);
