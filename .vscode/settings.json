@@ -54,5 +54,6 @@
         "streambuf": "cpp",
         "cinttypes": "cpp",
         "typeinfo": "cpp"
-    }
+    },
+    "cmake.sourceDirectory": "/home/pablo/Documents/GitHub/PRO1Subject/Act1_23-24"
 }

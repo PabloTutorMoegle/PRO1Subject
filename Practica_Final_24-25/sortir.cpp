@@ -27,6 +27,7 @@ bool buscar_sortida_it (laberint &lab, int eng)
 {
   bool trobat_sortida=false;
   bool energia_acaba=false;
+  bool recarga=false;
   stack<coord> pila;
   stack<direccio> camino;
   coord c = lab.entrada();
@@ -35,7 +36,12 @@ bool buscar_sortida_it (laberint &lab, int eng)
 
   while (!pila.empty() and trobat_sortida==false and energia_acaba==false) {
     //cout<<"Estat abans: "<< lab(c).mostrar() <<endl;
-
+    if (lab(c).es_energia()) 
+    {
+      eng += lab(c).bateria();
+      recarga=true;
+      cout << "Recàrrega de bateria: " << eng << endl;
+    }
     lab(c).marcar();
     //cout<<"Estat despres: "<< lab(c).mostrar() <<endl;
     
@@ -66,17 +72,12 @@ bool buscar_sortida_it (laberint &lab, int eng)
     {
       trobat_sortida=true;
     }
-    if (lab(c).es_energia()) 
-    {
-      eng += lab(c).bateria();
-      //cout << "Recàrrega de bateria: " << lab(c).bateria() << endl;
-    }
     eng--;
     if (eng == 0) 
     {
       energia_acaba=true;               //si la energía termina, el bucle while termina y devuelve false SIEMPRE Y CUANDO NO HAYA TERMINADO PERO ESTÉ EN LA SALIDA
     }
-
+    if (recarga) cout << "si recarga" << endl;
     cout << "Energia: " << eng << endl;
     
     if(trobat_sortida==false and casella_trobada==false)   //después de ni haber encontrado la salida ni otra casilla para seguir, retrocede una casilla
