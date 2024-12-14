@@ -46,7 +46,13 @@ bool casella::es_energia() const
 // Consulta la quantitat de recàrrega de bateria de la casella.
 int casella::bateria() const
 {
-    return bat;
+    int b = 0;
+    if (es_energia())
+    {
+        int c = cont;
+        b = c - 48;
+    }
+    return b;
 }
 
 void casella::casella_erronea()

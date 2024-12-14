@@ -32,6 +32,12 @@ const direccio& direccio::operator++()
     return *this;
 }
 
+//programar el operador de !=
+bool direccio::operator!=(const direccio &d) const
+{
+    return this->d != d.d;
+}
+
 // Obté la coordenada de components x,y que significa un moviment en
 // aquesta direcció en el pla 2D de la pantalla, o sigui amb aquest criteri:
 // * La primera component (x) indica la fila i creix de dalt a baix
