@@ -61,6 +61,26 @@ coord laberint::entrada() const
     return c;
 }
 
+// Obté quina és la casella de sortida del laberint.
+coord laberint::sortida() const
+{
+    coord c(-1, -1);
+    for (int i = 0; i < (int)taula.size(); i++)
+    {
+        for (int j = 0; j < (int)taula[i].size(); j++)
+        {
+            if (taula[i][j].es_sortida())
+            {
+                c.x = i;
+                c.y = j;
+                return c;
+            }
+        }
+    }
+
+    return c;
+}
+
 // Imprimeix a cout el laberint.
 void laberint::mostrar() const
 {

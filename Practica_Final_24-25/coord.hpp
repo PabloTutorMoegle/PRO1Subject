@@ -29,6 +29,9 @@ class coord {
     // per exemple:  coord(3,5) == coord(1,-2)
     bool operator==(const coord &c) const;
 
+    //operador de < 
+    bool operator<(const coord &c) const;
+
     // metode de escritura
     friend std::ostream &operator<<(std::ostream &os, const coord &c);
 };

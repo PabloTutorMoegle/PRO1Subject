@@ -38,6 +38,13 @@ bool coord::operator==(const coord &c) const
     return x == c.x && y == c.y;
 }
 
+//operador de <
+bool coord::operator<(const coord &c) const
+{
+    if (x != c.x) return x < c.x;
+    return y < c.y;
+}
+
 ostream &operator<<(ostream &os, const coord &c)
 {
     os << "(" << c.x << "," << c.y << ")";

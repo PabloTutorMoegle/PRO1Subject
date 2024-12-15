@@ -28,6 +28,8 @@ class laberint
 
     // Obté quina és la casella d'entrada del laberint.
     coord entrada() const;
+    // Obté quina és la casella de sortida del laberint.
+    coord sortida() const;
     // Imprimeix a cout el laberint.
     void mostrar() const;
 
