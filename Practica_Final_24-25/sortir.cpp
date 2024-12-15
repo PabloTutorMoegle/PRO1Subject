@@ -42,6 +42,7 @@ bool buscar_sortida_it(laberint &lab, int eng)
       eng += lab(c).bateria();
     }
     lab(c).marcar();
+    lab(c).omplir('X');
     
     bool casella_trobada = false;
     bool avanza = false;
@@ -73,6 +74,7 @@ bool buscar_sortida_it(laberint &lab, int eng)
     if(trobat_sortida == false && casella_trobada == false)
     {
       lab(c).marcar();
+      lab(c).omplir('.');
       pila.pop();
       c = pila.top();
       lab(c).desmarcar();
@@ -84,27 +86,10 @@ bool buscar_sortida_it(laberint &lab, int eng)
     }
   }
 
-  cout << "Camí final " << camino.size() << endl;
-  cout << eng << "---" << eng_necesaria << endl;
+  //cout << "Camí final " << camino.size() << endl;
+  //cout << eng << "---" << eng_necesaria << endl;
 
-  //despintar todo lo que este marcado como visitado que no pertenezca al camino
-  while(!pila.empty())
-  {
-    lab(pila.top()).omplir('X');
-    pila.pop();
-  }
-
-  // Desmarcar todas las casillas visitadas que no pertenecen al camino
-  for (int i = 0; i < lab.sizeR(); ++i) {
-    for (int j = 0; j < lab.sizeC(); ++j) {
-      coord c(i, j);
-      if (lab(c).es_visitada() && lab(c).mostrar() != 'X') {
-        lab(c).desmarcar();
-      }
-    }
-  }
-
-  lab.mostrar();
+  //lab.mostrar();
 
   return eng_necesaria <= eng;
 }
