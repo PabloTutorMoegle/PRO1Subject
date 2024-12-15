@@ -28,8 +28,6 @@ void dibuixar(laberint lab, int en, float t)
 // Solució ITERATIVA: buscar sortida del laberint lab amb energia eng usant A*
 bool buscar_sortida_it(laberint &lab, int eng) 
 {
-int pasos_posibles = eng;
-  eng = 1000;
   bool trobat_sortida=false;
   bool energia_acaba=false;
   stack<coord> pila;
@@ -37,7 +35,7 @@ int pasos_posibles = eng;
   coord c = lab.entrada();
   pila.push(c);
 
-  while (!pila.empty() and trobat_sortida==false and energia_acaba==false) 
+  while (!pila.empty() && trobat_sortida == false && energia_acaba == false) 
   {
     //cout<<"Estat abans: "<< lab(c).mostrar() <<endl;
     if (lab(c).es_energia()) 
@@ -47,29 +45,28 @@ int pasos_posibles = eng;
     lab(c).marcar();
     //cout<<"Estat despres: "<< lab(c).mostrar() <<endl;
     
-    bool casella_trobada=false;
+    bool casella_trobada = false;
     bool avanza = false;
-    for (direccio d = lab(c).direccio_actual(); d.is_stop() != true and casella_trobada==false; ++d) 
+    for (direccio d = lab(c).direccio_actual(); d.is_stop() != true && casella_trobada == false; ++d) 
     {      
       coord z = c + d.despl();
       //cout << "Estat coordenada z: " << lab(z).mostrar() << " " << lab(z).es_visitada() << endl;
-      if(!lab(z).es_visitada() and !lab(z).es_obstacle())
+      if(!lab(z).es_visitada() && !lab(z).es_obstacle())
       {
         pila.push(z);
-        casella_trobada=true;
+        casella_trobada = true;
         //cout << d << endl;
         camino.push(d);
         avanza = true;
+        eng--;
       }      
     }
-
+    if (!casella_trobada) {
+      lab(c).desmarcar();
+      eng++;
+    }
     if(!avanza)
     {
-      if(lab(c).direccio_actual().is_stop())
-      {
-        eng++;
-      }
-      eng++;
       eng++;
       camino.pop();
     } 
@@ -78,9 +75,8 @@ int pasos_posibles = eng;
 
     if (lab(c).es_sortida())
     {
-      trobat_sortida=true;
+      trobat_sortida = true;
     }
-    eng--;
     if (eng == 0) 
     {
       energia_acaba=true;               //si la energía termina, el bucle while termina y devuelve false SIEMPRE Y CUANDO NO HAYA TERMINADO PERO ESTÉ EN LA SALIDA
@@ -88,7 +84,7 @@ int pasos_posibles = eng;
 
     //cout << "Energia: " << eng << endl;
     
-    if(trobat_sortida==false and casella_trobada==false)   //después de ni haber encontrado la salida ni otra casilla para seguir, retrocede una casilla
+    if(trobat_sortida == false && casella_trobada == false)   //después de ni haber encontrado la salida ni otra casilla para seguir, retrocede una casilla
     {
       lab(c).marcar();
       pila.pop();
@@ -125,7 +121,8 @@ int pasos_posibles = eng;
 
   lab.mostrar();
 
-  return camino.size() <= pasos_posibles;
+  return trobat_sortida;
+  
 }
 
 // Solució RECURSIVA (sin implementar A* por simplicidad)
