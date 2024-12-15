@@ -81,6 +81,16 @@ coord laberint::sortida() const
     return c;
 }
 
+int laberint::sizeR() const
+{
+    return taula.size();
+}
+
+int laberint::sizeC() const
+{
+    return taula[0].size();
+}
+
 // Imprimeix a cout el laberint.
 void laberint::mostrar() const
 {
