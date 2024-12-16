@@ -26,6 +26,79 @@ void dibuixar(laberint lab, int en, float t)
   util::espera(t);
 }
 
+/*bool buscar_sortida_it(laberint &lab, int eng) 
+{
+  bool trobat_sortida = false; // Indica si hemos encontrado la salida
+  int eng_necesaria = 0;       // Energía acumulada necesaria
+  stack<coord> pila;           // Pila para almacenar las coordenadas del camino
+  stack<direccio> camino;      // Pila para almacenar las direcciones tomadas
+  coord c = lab.entrada();     // Coordenada de entrada del laberinto
+  pila.push(c);                // Inicializar la pila con la posición inicial
+
+  while (!pila.empty() && !trobat_sortida) 
+  {
+    c = pila.top(); // Obtener la coordenada actual
+
+    // Si la casilla contiene energía, recargar la batería
+    if (lab(c).es_energia()) {
+      eng += lab(c).bateria();
+    }
+
+    // Caso base: Si encontramos la salida
+    if (lab(c).es_sortida()) {
+      trobat_sortida = true;
+      break;
+    }
+
+    // Marcar la celda como visitada y rellenarla
+    lab(c).marcar();
+    lab(c).omplir('P');
+
+    if (test) {
+      dibuixar(lab, eng, 0.05); // Visualización opcional
+    }
+
+    bool casella_trobada = false; // Flag para saber si podemos avanzar
+
+    // Intentamos avanzar en todas las direcciones
+    for (direccio d = lab(c).direccio_actual(); !d.is_stop(); ++d) 
+    {
+      coord siguiente = c + d.despl();
+      lab(c).avancar_direccions(); // Actualizar la dirección actual
+      // Comprobar si podemos avanzar: no visitada, no es obstáculo y tenemos energía
+      if (!lab(siguiente).es_visitada() && !lab(siguiente).es_obstacle() && eng_necesaria < eng) 
+      {
+        // Avanzamos a la siguiente posición
+        pila.push(siguiente);
+        camino.push(d);
+        eng_necesaria++;
+        casella_trobada = true;
+        break;
+      }
+    }
+
+    // Si no encontramos casillas válidas, retrocedemos
+    if (!casella_trobada) 
+    {
+      lab(c).omplir('.');   // Marcar como explorada sin salida
+      lab(c).desmarcar();   // Desmarcar como visitada
+      pila.pop();           // Retroceder en la pila
+      eng_necesaria--;      // Restar energía usada
+      if (!camino.empty()) {
+        camino.pop();       // Eliminar la última dirección tomada
+      }
+    }
+  }
+
+  // Mostrar el resultado de energía
+  int engf = eng - eng_necesaria;
+  cout << "Energia inicial: " << eng << endl;
+  cout << "Energia necesaria: " << eng_necesaria << endl;
+  cout << "Energia final: " << (engf < 0 ? 0 : engf) << endl;
+
+  return trobat_sortida && eng_necesaria <= eng;
+}*/
+
 
 // Solució ITERATIVA: buscar sortida del laberint lab amb energia eng 
 bool buscar_sortida_it(laberint &lab, int eng) 
@@ -52,22 +125,27 @@ bool buscar_sortida_it(laberint &lab, int eng)
     }
     
     bool casella_trobada = false;
-    bool avanza = false;
+    
+    if(!lab(c).direccio_actual().is_nord())
+      {
+        lab(c).iniciar_direccions();  ///esto no funcniona SIGUE PENSANDO
+      }
 
     for (direccio d = lab(c).direccio_actual(); !d.is_stop() && !casella_trobada; ++d) 
     {      
       coord z = c + d.despl();
+      lab(c).avancar_direccions();
       if(!lab(z).es_visitada() && !lab(z).es_obstacle() && eng_necesaria < eng)
       {
         pila.push(z);
         casella_trobada = true;
         camino.push(d);
-        avanza = true;
         eng_necesaria++;
       }      
     }
-    if(!avanza)
+    if(!casella_trobada)
     {
+      lab(c).desmarcar();
       eng_necesaria--;
       camino.pop();
     } 
@@ -83,9 +161,9 @@ bool buscar_sortida_it(laberint &lab, int eng)
     {
       lab(c).omplir('.');
       pila.pop();
+      lab(c).desmarcar();
       if (!pila.empty()) {
         c = pila.top();
-        lab(c).desmarcar();
       }
     }
   }

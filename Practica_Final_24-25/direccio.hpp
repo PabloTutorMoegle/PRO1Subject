@@ -24,6 +24,9 @@ class direccio {
       // Veure si el valor de la direcció és el del final de la llista.
       bool is_stop() const;
 
+      // Veure si el valor de la direcció és el del nord.
+      bool is_nord() const;
+
       // Canvia el valor de la direcció, posant-li el primer de la llista.
       const direccio& init();
 

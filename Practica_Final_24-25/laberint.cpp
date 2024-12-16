@@ -111,7 +111,7 @@ void laberint::mostrar2() const
         for (int j = 0; j < (int)taula[i].size(); j++)
         {
             if (taula[i][j].es_visitada())
-                cout << " ";
+                cout << "V";
             else
                 cout << taula[i][j].bateria();
         }

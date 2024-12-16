@@ -15,6 +15,12 @@ bool direccio::is_stop() const
     return d == STOP;
 }
 
+// Veure si el valor de la direcció és el del nord.
+bool direccio::is_nord() const
+{
+    return d == NORD;
+}
+
 // Canvia el valor de la direcció, posant-li el primer de la llista.
 const direccio& direccio::init()
 {
