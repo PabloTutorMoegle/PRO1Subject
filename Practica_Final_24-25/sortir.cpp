@@ -25,7 +25,7 @@ void dibuixar(laberint lab, int en, float t)
   util::espera(t);
 }
 
-// Solució ITERATIVA: buscar sortida del laberint lab amb energia eng usant A*
+// Solució ITERATIVA: buscar sortida del laberint lab amb energia eng 
 bool buscar_sortida_it(laberint &lab, int eng) 
 {
   bool trobat_sortida = false;
@@ -42,7 +42,7 @@ bool buscar_sortida_it(laberint &lab, int eng)
       eng += lab(c).bateria();
     }
     lab(c).marcar();
-    lab(c).omplir('X');
+    lab(c).omplir('P');
     
     bool casella_trobada = false;
     bool avanza = false;
@@ -82,17 +82,32 @@ bool buscar_sortida_it(laberint &lab, int eng)
 
     if (test) 
     {
-      dibuixar(lab, eng, 0.2);
+      dibuixar(lab, eng, 0.05);
     }
+  }
+
+  int engf = eng - eng_necesaria;
+  if (engf < 0) 
+  {
+    cout << "Energia final: " << 0 << endl;
+  } 
+  else 
+  {
+    cout << "Energia final: " << engf << endl;
   }
 
   return eng_necesaria <= eng;
 }
 
-bool buscar_sortida_rec2(laberint &lab, coord c, int eng, stack<direccio> &camino, int &eng_necesaria) 
+bool buscar_sortida_rec2(laberint &lab, coord c, int eng, stack<direccio> &camino, int &eng_necesaria, bool &trobat_sortida) 
 {
     // Caso base: Si no queda energía suficiente
     if (eng < 0) return false;
+
+    if (trobat_sortida)
+    {
+      return true;
+    } 
 
     // Si la coordenada actual contiene energía, recargar batería
     if (lab(c).es_energia()) {
@@ -106,9 +121,13 @@ bool buscar_sortida_rec2(laberint &lab, coord c, int eng, stack<direccio> &camin
 
     // Marcar la celda como visitada y rellenarla
     lab(c).marcar();
-    lab(c).omplir('X');
+    lab(c).omplir('P');
 
-    bool trobat_sortida = false;
+    if(test) {
+      dibuixar(lab, eng, 0.2);
+    }
+
+    trobat_sortida = false;
 
     // Intentamos avanzar en todas las direcciones
     for (direccio d = lab(c).direccio_actual(); !d.is_stop() && !trobat_sortida; ++d) {
@@ -119,7 +138,7 @@ bool buscar_sortida_rec2(laberint &lab, coord c, int eng, stack<direccio> &camin
         camino.push(d);
         eng_necesaria++;
         
-        if (buscar_sortida_rec2(lab, siguiente, eng - 1, camino, eng_necesaria)) {
+        if (buscar_sortida_rec2(lab, siguiente, eng - 1, camino, eng_necesaria, trobat_sortida)) {
           trobat_sortida = true;  // Si encontramos la salida en este camino, terminamos
         } else {
           // Retroceder: Deshacer cambios si no encontramos la salida
@@ -135,9 +154,6 @@ bool buscar_sortida_rec2(laberint &lab, coord c, int eng, stack<direccio> &camin
       lab(c).desmarcar();
     }
 
-    if(test) {
-      dibuixar(lab, eng, 0.2);
-    }
 
     return trobat_sortida;
 }
@@ -150,7 +166,17 @@ bool buscar_sortida_rec(laberint &lab, int eng)
   coord entrada = lab.entrada();
 
   // Llamada inicial a la función recursiva
-  bool trobat_sortida = buscar_sortida_rec2(lab, entrada, eng, camino, eng_necesaria);
+  bool trobat_sortida = false;
+  trobat_sortida = buscar_sortida_rec2(lab, entrada, eng, camino, eng_necesaria, trobat_sortida);
+
+  int engf = eng - eng_necesaria;
+  cout << "Energia inicial: " << eng << endl;
+  cout << "Energia necesaria: " << eng_necesaria << endl;
+  if (engf < 0) {
+    cout << "Energia final: " << 0 << endl;
+  } else {
+    cout << "Energia final: " << engf << endl;
+  }
 
   return trobat_sortida && eng_necesaria <= eng;
 }
