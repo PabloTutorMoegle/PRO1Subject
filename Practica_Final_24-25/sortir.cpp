@@ -26,6 +26,7 @@ void dibuixar(laberint lab, int en, float t)
   util::espera(t);
 }
 
+
 // Solució ITERATIVA: buscar sortida del laberint lab amb energia eng 
 bool buscar_sortida_it(laberint &lab, int eng) 
 {
@@ -117,7 +118,7 @@ bool buscar_sortida_rec2(laberint &lab, coord c, int eng, stack<direccio> &camin
     lab(c).omplir('P');
 
     if(test) {
-      dibuixar(lab, eng, 0.2);
+      dibuixar(lab, eng, 0.02);
     }
 
     trobat_sortida = false;
