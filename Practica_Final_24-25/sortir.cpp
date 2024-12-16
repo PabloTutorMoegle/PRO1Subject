@@ -96,47 +96,50 @@ bool buscar_sortida_rec2(laberint &lab, coord c, int eng, stack<direccio> &camin
 
     // Si la coordenada actual contiene energía, recargar batería
     if (lab(c).es_energia()) {
-        eng += lab(c).bateria();
+      eng += lab(c).bateria();
     }
     
     // Caso base: Si encontramos la salida
     if (lab(c).es_sortida()) {
-        return true;
+      return true;
     }
 
     // Marcar la celda como visitada y rellenarla
     lab(c).marcar();
     lab(c).omplir('X');
 
+    bool trobat_sortida = false;
 
     // Intentamos avanzar en todas las direcciones
-    for (direccio d = lab(c).direccio_actual(); !d.is_stop(); ++d) {
-        coord siguiente = c + d.despl();
+    for (direccio d = lab(c).direccio_actual(); !d.is_stop() && !trobat_sortida; ++d) {
+      coord siguiente = c + d.despl();
 
-        if (!lab(siguiente).es_visitada() && !lab(siguiente).es_obstacle()) {
-            // Avanzar en la dirección actual
-            camino.push(d);
-            eng_necesaria++;
-            
-            if (buscar_sortida_rec2(lab, siguiente, eng - 1, camino, eng_necesaria)) {
-                return true;  // Si encontramos la salida en este camino, terminamos
-            }
-
-            // Retroceder: Deshacer cambios si no encontramos la salida
-            camino.pop();
-            eng_necesaria--;
+      if (!lab(siguiente).es_visitada() && !lab(siguiente).es_obstacle()) {
+        // Avanzar en la dirección actual
+        camino.push(d);
+        eng_necesaria++;
+        
+        if (buscar_sortida_rec2(lab, siguiente, eng - 1, camino, eng_necesaria)) {
+          trobat_sortida = true;  // Si encontramos la salida en este camino, terminamos
+        } else {
+          // Retroceder: Deshacer cambios si no encontramos la salida
+          camino.pop();
+          eng_necesaria--;
         }
+      }
     }
 
     // Si no podemos avanzar, desmarcar la celda y rellenarla con '.'
-    lab(c).omplir('.');
-    lab(c).desmarcar();
-
-    if(test) {
-        dibuixar(lab, eng, 0.2);
+    if (!trobat_sortida) {
+      lab(c).omplir('.');
+      lab(c).desmarcar();
     }
 
-    return false;
+    if(test) {
+      dibuixar(lab, eng, 0.2);
+    }
+
+    return trobat_sortida;
 }
 
 // Solució RECURSIVA (sin implementar A* por simplicidad)
