@@ -22,6 +22,7 @@ void dibuixar(laberint lab, int en, float t)
   util::neteja();
   lab.mostrar();
   cout << "Energia: " << en << endl;
+  lab.mostrar2();
   util::espera(t);
 }
 
@@ -35,21 +36,27 @@ bool buscar_sortida_it(laberint &lab, int eng)
   coord c = lab.entrada();
   pila.push(c);
 
-  while (!pila.empty() && trobat_sortida == false) 
+  while (!pila.empty() && !trobat_sortida) 
   {
     if (lab(c).es_energia()) 
     {
       eng += lab(c).bateria();
     }
+
     lab(c).marcar();
-    lab(c).omplir('P');
+    
+    if (test) 
+    {
+      dibuixar(lab, eng, 0.05);
+    }
     
     bool casella_trobada = false;
     bool avanza = false;
-    for (direccio d = lab(c).direccio_actual(); d.is_stop() != true && casella_trobada == false; ++d) 
+
+    for (direccio d = lab(c).direccio_actual(); !d.is_stop() && !casella_trobada; ++d) 
     {      
       coord z = c + d.despl();
-      if(!lab(z).es_visitada() && !lab(z).es_obstacle())
+      if(!lab(z).es_visitada() && !lab(z).es_obstacle() && eng_necesaria < eng)
       {
         pila.push(z);
         casella_trobada = true;
@@ -71,32 +78,18 @@ bool buscar_sortida_it(laberint &lab, int eng)
       trobat_sortida = true;
     }
     
-    if(trobat_sortida == false && casella_trobada == false)
+    if(!trobat_sortida && !casella_trobada)
     {
-      lab(c).marcar();
       lab(c).omplir('.');
       pila.pop();
-      c = pila.top();
-      lab(c).desmarcar();
-    }
-
-    if (test) 
-    {
-      dibuixar(lab, eng, 0.05);
+      if (!pila.empty()) {
+        c = pila.top();
+        lab(c).desmarcar();
+      }
     }
   }
 
-  int engf = eng - eng_necesaria;
-  if (engf < 0) 
-  {
-    cout << "Energia final: " << 0 << endl;
-  } 
-  else 
-  {
-    cout << "Energia final: " << engf << endl;
-  }
-
-  return eng_necesaria <= eng;
+  return trobat_sortida && eng_necesaria <= eng;
 }
 
 bool buscar_sortida_rec2(laberint &lab, coord c, int eng, stack<direccio> &camino, int &eng_necesaria, bool &trobat_sortida) 

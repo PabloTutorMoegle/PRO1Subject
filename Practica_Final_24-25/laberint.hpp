@@ -34,6 +34,7 @@ class laberint
     int sizeC() const;
     // Imprimeix a cout el laberint.
     void mostrar() const;
+    void mostrar2() const;
 
     bool dins_labP(coord c) const;
 

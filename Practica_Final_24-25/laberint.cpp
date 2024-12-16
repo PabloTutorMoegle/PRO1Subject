@@ -104,6 +104,21 @@ void laberint::mostrar() const
     }
 }
 
+void laberint::mostrar2() const
+{
+    for (int i = 0; i < (int)taula.size(); i++)
+    {
+        for (int j = 0; j < (int)taula[i].size(); j++)
+        {
+            if (taula[i][j].es_visitada())
+                cout << " ";
+            else
+                cout << taula[i][j].bateria();
+        }
+        cout << endl;
+    }
+}
+
 bool laberint::dins_labP(coord c) const
 {
     return c.x >= 0 && c.x < (int)taula.size() && c.y >= 0 && c.y < (int)taula[0].size();
